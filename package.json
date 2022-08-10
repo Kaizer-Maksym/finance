@@ -12,13 +12,16 @@
     "url": "git+https://github.com/Kaizer-Maksym/finance.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta",
+  "author": "Alexander Repeta ",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Kaizer-Maksym/finance/issues"
+    "url": "https://github.com/Kaizer-Maksym/finance.git"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
+    "modern-normalize": "^1.1.0",
+    "simplelightbox": "^2.10.3"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",

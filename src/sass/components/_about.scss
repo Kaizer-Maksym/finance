@@ -1,0 +1,93 @@
+.about {
+  background-color: $about-section-color;
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  color: $element-white-color;
+  text-align: left;
+
+  @media screen and (min-width: 768px) {
+    display: inline-grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+  }
+}
+
+.about-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.about-container {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+    width: 100%;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 30px 40px 30px 20px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 80px 60px 80px 20px;
+  }
+}
+
+.about-heading {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.66;
+}
+
+.about-review {
+  @extend %section-review;
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 38px;
+  }
+}
+
+.about-info {
+  @extend %section-description;
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 20px;
+  }
+}
+
+.about-section-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  width: 160px;
+  height: 50px;
+
+  background-color: inherit;
+
+  @extend %button;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background-color: $primery-bg-color;
+    color: $element-green-color;
+    .about-btn__icon {
+      fill: $element-green-color;
+    }
+  }
+}
+
+.about-btn__icon {
+  fill: $element-white-color;
+}

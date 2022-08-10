@@ -1,0 +1,120 @@
+.team-section {
+  font-family: 'Open Sans';
+  font-style: normal;
+  padding: 20px 40px;
+  color: $elemnt-black-color;
+}
+
+.team {
+  @media screen and (min-width: 768px) {
+    display: inline-grid;
+    grid-auto-flow: column;
+    column-gap: 15px;
+  }
+}
+
+.team-member {
+  &:hover,
+  &:focus {
+    .team-member__img {
+      transform: scale(1.1);
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
+    .overlay {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+}
+
+.team-member__img {
+  margin-bottom: 20px;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.overlay-container {
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.member-networks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+.member-networks__icon {
+  fill: $element-white-color;
+  opacity: 1;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+  }
+}
+
+.team-section__heading {
+  margin-bottom: 20px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.66;
+  text-align: center;
+}
+
+.team-section__review {
+  margin-bottom: 20px;
+
+  font-weight: 300;
+  font-size: 38px;
+  line-height: 1.26;
+  text-align: center;
+}
+
+.team-section__info {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.team-member__name {
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 1.25px;
+  margin-bottom: 15px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.team-member__crew {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+}

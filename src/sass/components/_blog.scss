@@ -1,0 +1,106 @@
+.blog {
+  background-color: $blog-section-color;
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  text-align: left;
+  color: $element-white-color;
+
+  @media screen and (min-width: 768px) {
+    display: inline-grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'a b';
+
+    .blog-img {
+      grid-area: b;
+    }
+    .blog-container {
+      grid-area: a;
+    }
+  }
+}
+
+.blog-img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.blog-container {
+  padding: 40px 40px 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 50px 60px 50px 20px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding: 80px 60px 80px 20px;
+  }
+}
+
+.post-date {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.66;
+  @media screen and(max-width:1024px) {
+    margin-bottom: 10px;
+  }
+}
+
+.blog-heading {
+  @extend %section-review;
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 38px;
+  }
+}
+
+.blog-post {
+  @extend %section-description;
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 20px;
+  }
+}
+
+.blog-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5px;
+  width: 180px;
+  height: 40px;
+
+  @extend %button;
+
+  background-color: $blog-section-color;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    background-color: $element-white-color;
+    color: $blog-section-color;
+
+    .blog-btn__icon {
+      fill: $blog-section-color;
+    }
+  }
+}
+
+.blog-btn__icon {
+  fill: $element-white-color;
+}
