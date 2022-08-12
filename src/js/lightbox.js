@@ -51,6 +51,9 @@ const ligthbox = new SimpleLightbox('.cases-list li a', {
   className: 'simple-lightbox',
   nav: false,
   close: false,
+  showCounter: true,
+  scrollZoom: false,
+  spinner: true,
 });
 
 ligthbox.on('show.simplelightbox', () => {});
