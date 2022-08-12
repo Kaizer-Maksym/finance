@@ -25,29 +25,26 @@
       Callback
     </h2>
     <form class="contact-form" novalidate netlify>
-      <div class="name-block">
-        <label
-          for="input-name"
-          id="label-name"
-          class="form-name__label"
-        ></label>
+      <div class="input-box__name">
+        <label for="input-name" id="label-name" class="label-text"
+          >Enter your name</label
+        >
         <input
           id="input-name"
           class="contact-form__input"
           type="text"
           name="name"
-          placeholder="Enter your name"
         />
       </div>
-      <div class="email-block">
-        <label for="input-email" id="label-email" class="form-email__label">
-        </label>
+      <div class="input-box__email">
+        <label for="input-email" id="label-email" class="label-text">
+          Enter email*</label
+        >
         <input
           id="input-email"
           class="contact-form__input"
           type="email"
           name="email"
-          placeholder="Enter email*"
           data-reg="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
         />
 

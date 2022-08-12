@@ -6,6 +6,8 @@ const refs = {
   labelEmail: document.querySelector('#label-email'),
   inputName: document.querySelector('#input-name'),
   inputEmail: document.querySelector('#input-email'),
+  inputBoxEmail: document.querySelector('.input-box__email'),
+  inputBoxName: document.querySelector('.input-box__name'),
   worning: document.querySelector('.warnig'),
   formBtn: document.querySelector('.contact-form__btn'),
   submitModal: document.querySelector('.backdrop'),
@@ -22,14 +24,35 @@ inputEmail.forEach(el => {
   }
 });
 
-// refs.contactForm.addEventListener('click', onHandleClick);
 refs.contactForm.addEventListener('submit', onSubmit);
-refs.contactForm.addEventListener('input', throttle(changeInputValue, 500));
+refs.contactForm.addEventListener('input', throttle(changeInputValue, 300));
+refs.inputEmail.addEventListener('focus', toggleClass);
+refs.inputName.addEventListener('focus', toggleClass);
+refs.inputEmail.addEventListener('blur', onInputBlur);
+refs.inputName.addEventListener('blur', onInputBlur);
 refs.formBtn.addEventListener('click', buttonHandler);
 
 function changeInputValue({ target }) {
   if (target.hasAttribute('data-reg')) {
     inputCheck(target);
+  }
+}
+
+function toggleClass(e) {
+  if (e.target.id === 'input-name' || e.target.value !== '') {
+    refs.inputBoxName.classList.add('input-focus');
+  }
+  if (e.target.id === 'input-email' || e.target.value !== '') {
+    refs.inputBoxEmail.classList.add('input-focus');
+  }
+}
+
+function onInputBlur(e) {
+  if (e.target.value !== '') {
+    return;
+  } else {
+    refs.inputBoxName.classList.remove('input-focus');
+    refs.inputBoxEmail.classList.remove('input-focus');
   }
 }
 
