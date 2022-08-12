@@ -72,13 +72,19 @@
 }
 
 .nav-list__item {
+  position: relative;
   padding-bottom: 10px;
   transition: border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 
-  &:hover,
-  &:focus {
+  &:hover > .nav-list__link::before,
+  &:focus > .nav-list__link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    top: 0;
     border-bottom: 3px solid #28a745;
+    width: 100%;
   }
 }
 
